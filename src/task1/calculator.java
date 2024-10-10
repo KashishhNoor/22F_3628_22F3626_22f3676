@@ -1,8 +1,8 @@
 package task1;
 
-public class Calculator {
+public class calculator {
 
-    public Calculator() {
+    public calculator() {
     }
 
     public double addition(double num1, double num2) throws IllegalArgumentException {
@@ -22,7 +22,7 @@ public class Calculator {
     }
 
     public static void main(String[] args) {
-        Calculator calc = new Calculator();
+        calculator calc = new calculator();
 
         try {
             double sum = calc.addition(5, 3);
