@@ -19,7 +19,6 @@ public class UserView {
 
     public UserView(UserAuthenticationService userAuthenticationService) {
         this.userAuthenticationService = userAuthenticationService; 
-        
         frame = new JFrame("User Authentication");
         usernameField = new JTextField(20);
         passwordField = new JPasswordField(20);
@@ -28,25 +27,24 @@ public class UserView {
         cancelButton = new JButton("Cancel");
         forgotPasswordButton = new JButton("Forgot Password");
 
-        // Combined UI design changes from both members
         designUI();
 
-        // Panel setup
-        JPanel panel = new JPanel(new GridLayout(5, 2)); // Increased row count for email field
+        JPanel panel = new JPanel(new GridLayout(5, 2)); 
         panel.add(new JLabel("Username:"));
         panel.add(usernameField);
         panel.add(new JLabel("Password:"));
         panel.add(passwordField);
         panel.add(new JLabel("Email:"));
-        panel.add(emailField); // Added email field
+        panel.add(emailField); 
         panel.add(loginButton);
         panel.add(cancelButton);
         panel.add(forgotPasswordButton);
 
         frame.add(panel);
-        frame.setSize(500, 300); 
+        frame.setSize(500, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+
         addLoginListener();
         addCancelListener();
         addForgotPasswordListener();
@@ -60,6 +58,7 @@ public class UserView {
         loginButton.setFont(buttonFont);
         cancelButton.setFont(buttonFont);
         forgotPasswordButton.setFont(buttonFont);
+
         frame.setLayout(new FlowLayout());
     }
 
@@ -94,10 +93,10 @@ public class UserView {
             showMessage(result); 
         });
     }
+
     public void addCancelListener() {
         cancelButton.addActionListener(e -> clearFields());
     }
-
     public void addForgotPasswordListener() {
         forgotPasswordButton.addActionListener(e -> showMessage("Forgot password feature not implemented yet."));
     }
